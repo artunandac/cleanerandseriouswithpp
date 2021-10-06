@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Welcome to the NFC Card App</h1>
+        <p class="lead">This is gonna be my first serious project for myself</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img class="card-img" src="{% static 'img/1.jpg' %}" alt="">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <div class="card-title">Our Mission: EARNING MONEY</div>
+                        <p class="card-text">
+                            Yes, you didn't read wrong. Our first mission is earning money.
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">3 f*cking days ago</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

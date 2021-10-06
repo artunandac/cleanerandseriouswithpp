@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-9">
+            {% if card.profilepic == null or card.profilepic == "" %}    
+            {% else %}
+                <img class = "profilepic" src="{{card.profilepic.url}}" %} width="150">   <hr>  
+            {% endif %} 
+            <h1>{{ card.name }}</h1>
+            <hr>
+            {% if card.mail == null or card.mail == "" %}    
+            {% else %}
+                <span class="text-muted"><h2>E-Mail:</h2></span>
+                <h4>{{card.mail}} <a href="mailto:{{card.mail}}"><img  src="{% static 'img/maillogo.png' %}" width="50"></a></h4>   <hr>  
+            {% endif %} 
+            
+            
+            {% if card.gsm == null or card.gsm == "" %}    
+            {% else %}
+                <span class="text-muted"><h2>GSM: </h2></span>
+                <h4> +{{card.gsm}} <a href="tel:+{{card.gsm}}"><img  src="{% static 'img/phonelogo.png' %}" width="50"></a></h4>   <hr>
+            {% endif %} 
+        
+            
+            {% if card.position == null or card.position == "" %}    
+            {% else %}
+                <span class="text-muted"><h2>Position: </h2></span>
+                <h4> {{card.position}} </h4>   <hr>
+            {% endif %} 
+            
+            
+            {% if card.company == null or card.company == "" %}    
+            {% else %}
+                <span class="text-muted"><h2>Website: </h2></span>
+                <h4> {{card.company}}</h4>  <hr>
+            {% endif %} 
+            
+            {% if card.website == null or card.website == "" %}    
+            {% else %}
+                <span class="text-muted"><h2>Website: </h2></span>
+                <h4> <a href="{{card.website}}" target="_blank">{{card.website}}</a> </h4> 
+            {% endif %}
+            {% if card.fax == null or card.fax == "" %}    
+            {% else %}
+                <span class="text-muted"><h2>FAX: </h2></span>
+                <h4> +{{card.fax}} <a href="fax:+{{card.fax}}"></a></h4>    <hr>
+            {% endif %} 
+            
+            
+            <span class="text-muted"><h2>Social Media Accounts:</h2></span>
+        </div>
+    </div>
+        <div class="container">
+            <div class="row">
+            {% if card.twitteracc == null or card.twitteracc == "" %}    
+            {% else %}
+                <div class="col-sm">
+                    <a href="https://twitter.com/{{card.twitteracc}}" target="_blank" ><img border="0" src="{% static 'img/twitter.png' %}" width="100" height="100"></a>
+                </div>    
+            {% endif %} 
+            {% if card.instagramacc == null or card.instagramacc == "" %}    
+            {% else %}
+                <div class="col-sm">
+                    <a href="https://instagram.com/{{card.instagramacc}}" target="_blank" ><img border="0" src="{% static 'img/instagram.png' %}" width="100" height="100"></a>
+                </div>
+            {% endif %}     
+            {% if card.linkedinacc == null or card.linkedinacc == "" %}    
+            {% else %}
+                <div class="col-sm">
+                    <a href="{{card.linkedinacc}}" target="_blank" ><img border="0" src="{% static 'img/linkedin.png' %}" width="300"></a>
+                </div>
+            {% endif %} 
+                
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<body>
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card">
+            <div class="card-header text-white">
+                <h4>Edit Card Infos</h4>
+            </div>
+            <div class="card-body">
+                <form action="{% url 'editcardinfos' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="profilepic">Choose a Photo:</label>
+                        <input type="file" name="profilepic" id='profilepic' accept="image/*">
+                    </div>
+                   <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <input type="text" name="position" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" name="company" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website Link</label>
+                        <input type="text" name="website" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="gsm">GSM:</label>
+                        <input type="text" name="gsm" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="fax">Fax</label>
+                        <input type="text" name="fax" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="instagramacc">Instagram</label>
+                        <input type="text" name="instagramacc" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="twitteracc">Twitter</label>
+                        <input type="text" name="twitteracc" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedinacc">LinkedIn Link</label>
+                        <input type="text" name="linkedinacc" class="form-control" >
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>                      
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <a  href="{% url 'index' %}" class="nav-link">Cancel</a>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
